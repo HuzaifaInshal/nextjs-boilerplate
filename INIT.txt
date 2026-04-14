@@ -10,4 +10,4 @@ customize for this setting: TypeScript, ESLint, No React Compiler, Tailwind CSS,
 
 ## Packages Required
 
-pnpm add lucide-react class-variance-authority clsx tailwind-merge
+pnpm add lucide-react class-variance-authority clsx tailwind-merge moment
