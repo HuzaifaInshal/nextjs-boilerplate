@@ -3,6 +3,8 @@ import { Dialog } from "radix-ui";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+// Wherever this Modal is being called please dont forget to call <Dialog.Title></Dialog.Title> inside the children
+
 type ModalProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
