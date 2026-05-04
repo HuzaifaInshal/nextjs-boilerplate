@@ -65,8 +65,8 @@ export type MouseClickEvent = TFunctionWithYArg<
 export interface ModalProps {
   onOpenChange: VoidFunctionWithBooleanArg;
   open: boolean;
-  showCloseButton?: boolean;
-  dialogClassName?: string;
+  children: React.ReactNode;
+  className?: string;
 }
 
 export interface PaginationRes {
