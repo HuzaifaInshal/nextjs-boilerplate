@@ -31,7 +31,8 @@
     "react-hot-toast": "^2.6.0",
     "react-phone-input-2": "^2.15.1",
     "tailwind-merge": "^3.5.0",
-    "use-debounce": "^10.1.1"
+    "use-debounce": "^10.1.1",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

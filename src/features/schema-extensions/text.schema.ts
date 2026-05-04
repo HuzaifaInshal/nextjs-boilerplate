@@ -1,4 +1,3 @@
-import { MainTranslationHookType } from "@/features/language/types/language.type";
 import * as Yup from "yup";
 
 // ---------------------------------------------------------
@@ -7,38 +6,22 @@ import * as Yup from "yup";
 //
 // ---------------------------------------------------------
 
-// ✅ Name Schema - Now using chainable methods
-export const nameSchema = ({
-  fieldName,
-  t,
-}: {
-  fieldName: string;
-  t: MainTranslationHookType;
-}) => {
-  return Yup.string()
-    .required(t("isRequired", { field: fieldName }))
-    .min(3, t("mustContainAtLeast", { field: fieldName, count: 3 }))
-    .max(35, t("cannotExceedCharacters", { field: fieldName, count: 35 }))
-    .notOnlySpacesRule(t("cannotContainEmptySpaces", { field: fieldName }))
-    .notOnlySpecialCharsRule(
-      t("cannotContainOnlySpecialCharacters", { field: fieldName })
-    );
-};
+export const nameSchema = ({ fieldName }: { fieldName: string }) =>
+  Yup.string()
+    .required(`${fieldName} is required`)
+    .min(3, `${fieldName} must contain at least 3 characters`)
+    .max(35, `${fieldName} cannot exceed 35 characters`)
+    .notOnlySpacesRule(`${fieldName} cannot contain only empty spaces`)
+    .notOnlySpecialCharsRule(`${fieldName} cannot contain only special characters`);
 
-// ✅ Email Schema - Now using chainable methods
-export const emailSchema = ({ t }: { t: MainTranslationHookType }) => {
-  return Yup.string()
-    .required(t("isRequired", { field: t("email") }))
-    .isValidEmail(t("shouldBeValid", { field: t("email") }))
-    .notOnlySpacesRule(t("cannotContainEmptySpaces", { field: t("email") }))
-    .notOnlySpecialCharsRule(
-      t("cannotContainOnlySpecialCharacters", { field: t("email") })
-    );
-};
+export const emailSchema = () =>
+  Yup.string()
+    .required("Email is required")
+    .isValidEmail("Email should be valid")
+    .notOnlySpacesRule("Email cannot contain only empty spaces")
+    .notOnlySpecialCharsRule("Email cannot contain only special characters");
 
-// ✅ Phone Schema
-export const phoneSchema = ({ t }: { t: MainTranslationHookType }) => {
-  return Yup.string()
-    .required(t("isRequired", { field: t("phoneNumber") }))
-    .isValidPhoneNumber(t("shouldBeValid", { field: t("phoneNumber") }));
-};
+export const phoneSchema = () =>
+  Yup.string()
+    .required("Phone number is required")
+    .isValidPhoneNumber("Phone number should be valid");

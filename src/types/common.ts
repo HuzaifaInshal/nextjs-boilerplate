@@ -50,13 +50,6 @@ export type DynamicObjectWithObject = {
   [key: string]: string | DynamicObjectWithObject;
 };
 
-export type DotNestedKeys<T> = {
-  // eslint-disable-next-line
-  [K in keyof T & string]: T[K] extends Record<string, any>
-    ? `${K}` | `${K}.${DotNestedKeys<T[K]>}`
-    : `${K}`;
-}[keyof T & string];
-
 export type MouseClickEvent = TFunctionWithYArg<
   React.MouseEvent<HTMLButtonElement, MouseEvent>,
   void

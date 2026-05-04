@@ -16,18 +16,17 @@ import "react-phone-input-2/lib/style.css";
 import CountryFlag from "./CountryFlag";
 import LabelContainer from "./LabelContainer";
 import { inputStyles, startIconStyles } from "@/styles/ui/inputStyles";
+import { ReactDispatch } from "@/types/common";
 
 countriesLib.registerLocale(enLocale);
 
 type Props = Omit<React.InputHTMLAttributes<HTMLInputElement>, "children"> & {
   label?: string;
   error?: string;
-  value?: string;
   containerClassName?: string;
   labelClassName?: string;
-} & {
   inputClassName?: string;
-  onChange?: (_args: string) => void;
+  setValue?: ReactDispatch<string>;
   value?: string;
   defaultCountry?: string;
 };
@@ -55,6 +54,7 @@ const PhoneInput = forwardRef<HTMLInputElement, Props>(
       defaultCountry,
       error,
       labelClassName,
+      setValue,
       ...rest
     },
     // eslint-disable-next-line
@@ -201,7 +201,7 @@ const PhoneInput = forwardRef<HTMLInputElement, Props>(
             country={selectedCountry?.toLowerCase()}
             value={value}
             onChange={(phone, country) => {
-              onChange?.(phone);
+              setValue?.(phone);
               if (phone.length === 0) {
                 setDisplayCountry("");
                 return;

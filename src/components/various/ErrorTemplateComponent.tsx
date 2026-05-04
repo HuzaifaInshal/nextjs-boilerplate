@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { FolderSync, LogOut } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "../ui/Button";
 
 interface Props {
   textA: string;

@@ -21,7 +21,7 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
+  TableRow
 } from "@/components/ui/Tables";
 import TextInput from "@/components/ui/TextInput";
 import TimeRangeSelector from "@/components/ui/TimeRangeSelector";
@@ -29,7 +29,7 @@ import TimeSelector from "@/components/ui/TimeSelector";
 
 const Section = ({
   title,
-  children,
+  children
 }: {
   title: string;
   children: React.ReactNode;
@@ -119,7 +119,7 @@ export default function Home() {
         <PhoneInput
           label="Phone Number"
           value={phone}
-          onChange={setPhone}
+          setValue={setPhone}
           defaultCountry="us"
         />
       </Section>
@@ -136,7 +136,7 @@ export default function Home() {
           options={[
             { value: "1", label: "Option 1" },
             { value: "2", label: "Option 2" },
-            { value: "3", label: "Option 3" },
+            { value: "3", label: "Option 3" }
           ]}
         />
       </Section>
@@ -147,7 +147,7 @@ export default function Home() {
           items={[
             { value: "a", label: "Item A" },
             { value: "b", label: "Item B" },
-            { value: "c", label: "Item C", disabled: true },
+            { value: "c", label: "Item C", disabled: true }
           ]}
         >
           <Button variant="outline-transparent">Open Dropdown</Button>
