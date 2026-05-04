@@ -5,18 +5,27 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-success: var(--success);
-  --color-desctructive: var(--desctructive);
+  --color-destructive: var(--destructive);
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-border-primary: var(--border-primary);
+  --color-input: var(--input);
 }
 
 :root {
   --primary: #5178ff;
   --secondary: #5178ff;
-  --text-primary: #ffffff;
-  --text-secondary: lab(66.128% -0.0000298023 0.0000119209);
+  --text-primary: #000000;
+  --text-secondary: #6d6d6d;
   --success: #00ce26;
-  --desctructive: #da2020;
+  --destructive: #da2020;
+  --background: #fefbfe;
+  --background-secondary: #f4f5f8;
+  --border-primary: #dcdfe4;
+  --input: oklch(1 0 0);
+  --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 
 /* ========================|| Button Ripple Animation ||======================== */
