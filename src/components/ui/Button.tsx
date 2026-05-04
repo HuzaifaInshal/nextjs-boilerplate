@@ -11,16 +11,16 @@ const buttonVariants = cva(
   cn(
     "inline-flex items-center justify-center gap-2 relative",
     "whitespace-nowrap cursor-pointer rounded-md outline-none",
-    "font-semibold transition-all duration-200 disabled:cursor-not-allowed data-[externaldisabled=true]:opacity/90",
+    "font-semibold transition-all duration-200",
+    "disabled:cursor-not-allowed data-[externaldisabled=true]:opacity-60 hover:data-[externaldisabled=true]:opacity-60",
     "[&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0",
-    "relative overflow-hidden",
-    "disabled:opacity-60"
+    "relative overflow-hidden"
   ),
   {
     variants: {
       variant: {
         default:
-          "bg-[image:var(--gradient)] [&_.loader-container]:bg-[image:var(--gradient)] hover:opacity-90 text-background",
+          "bg-[image:var(--gradient)] [&_.loader-container]:bg-[image:var(--gradient)] hover:opacity-90 disabled:hover:opacity-100 text-background",
         ["outline-transparent"]:
           "text-text-primary border border-border-primary hover:bg-black/5 disabled:hover:bg-transparent shadow-[0px_1px_2px_0px_#00000014]",
         outline:
@@ -32,13 +32,13 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline"
       },
       size: {
-        default: "h-9 px-8 py-2",
+        default: "h-10 px-8 py-2",
         xs: "h-7 px-3 text-sm",
-        sm: "h-8 gap-1.5 px-4 text-sm",
-        lg: "h-12 px-10",
+        sm: "h-9 gap-1.5 px-4 text-sm",
+        lg: "h-11 px-10",
         icon: "size-9 rounded-full",
-        xlg: "h-12 px-12",
-        full: "h-12 w-full",
+        xlg: "h-12 px-12 text-lg",
+        full: "h-10 w-full",
         fit: "h-10 w-fit px-0"
       }
     },
@@ -114,6 +114,7 @@ function Button({
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       data-externaldisabled={`${props.disabled}`}
+      disabled={isLoading || props.disabled}
       onMouseDown={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         handleRippleAnimation(e, finalVariant);
         props.onMouseDown?.(e);

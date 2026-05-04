@@ -92,3 +92,64 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px var(--input) inset !important;
   color: var(--text-primary) !important;
 }
+
+/* ========================|| Style to make the radix dropdown occupy full trigger width ||======================== */
+.DropdownMenuContent {
+  width: var(--radix-dropdown-menu-trigger-width);
+  max-height: var(--radix-dropdown-menu-content-available-height);
+}
+
+/* ========================|| Skeleton Shimmer ||======================== */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-shine {
+  animation: shine 1.2s infinite linear;
+}
+
+/* ========================|| Util Classes ||======================== */
+
+@layer components {
+  .center {
+    @apply items-center justify-center;
+  }
+
+  .shadow-glow {
+    --glow-color: #166dfb;
+    box-shadow: 0 0 15px var(--glow-color) !important;
+  }
+
+  .hover\:shadow-glow:hover {
+    --glow-color: #166dfb;
+    box-shadow: 0 0 15px var(--glow-color) !important;
+  }
+}
+
+@layer utilities {
+  .dropdown-content-width-full {
+    width: var(--radix-dropdown-menu-trigger-width);
+  }
+}
+
+/* ========================|| Logo Spin Animation ||======================== */
+
+@keyframes logoSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo-spin {
+  animation: logoSpin 1.5s infinite cubic-bezier(0.34, 1.56, 0.64, 1);
+}
