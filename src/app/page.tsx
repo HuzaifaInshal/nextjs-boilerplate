@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import CountryFlag from "@/components/ui/CountryFlag";
 import DateRangeSelector from "@/components/ui/DateRangeSelector";
+import DateRangeSelectorV2 from "@/components/ui/DateRangeSelectorV2";
 import DateSelector from "@/components/ui/DateSelector";
 import DateTimeRangeSelector from "@/components/ui/DateTimeRangeSelector";
 import DateTimeSelector from "@/components/ui/DateTimeSelector";
@@ -51,6 +52,10 @@ export default function Home() {
   const [textValue, setTextValue] = useState("");
   const [selectValue, setSelectValue] = useState("");
   const [date, setDate] = useState<Date | undefined>();
+  const [dateRangeV2, setDateRangeV2] = useState<{
+    startDate: Date | null;
+    endDate: Date | null;
+  }>({ startDate: null, endDate: null });
   const [dateRange, setDateRange] = useState<{
     startDate: Date | null;
     endDate: Date | null;
@@ -166,6 +171,10 @@ export default function Home() {
 
       <Section title="Date Range Selector">
         <DateRangeSelector value={dateRange} setValue={setDateRange} />
+      </Section>
+
+      <Section title="Date Range Selector V2">
+        <DateRangeSelectorV2 value={dateRangeV2} setValue={setDateRangeV2} />
       </Section>
 
       <Section title="Date Time Selector">

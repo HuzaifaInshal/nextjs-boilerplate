@@ -24,15 +24,15 @@ const LoadingComponent = () => {
       <div className="container flex flex-col gap-6 justify-center h-[100dvh] w-full items-center mx-auto relative">
         <div className="relative h-[50px] lg:h-14 2xl:h-[70px] w-auto overflow-hidden">
           <Image
-            src={"LetzfairW"}
-            alt="Letzfair logo"
+            src={"/AppW"}
+            alt="App logo"
             height={500}
             width={500}
             className={cn("h-full w-auto", "dark:block", "hidden")}
           />
           <Image
-            src={"LetzfairB"}
-            alt="Letzfair logo"
+            src={"/AppB"}
+            alt="App logo"
             height={500}
             width={500}
             className={cn("h-full w-auto", "dark:hidden", "block")}

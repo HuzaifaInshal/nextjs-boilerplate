@@ -8,7 +8,8 @@ import { cn } from "@/lib/utils";
 import {
   endIconStyles,
   inputStyles,
-  startIconStyles
+  startIconStyles,
+  dropdownAnimationStyles
 } from "@/styles/ui/inputStyles";
 import { ReactDispatch } from "@/types/common";
 
@@ -134,6 +135,7 @@ const Select = ({
             sideOffset={8}
             className={cn(
               "z-50 min-w-(--radix-select-trigger-width) overflow-hidden rounded-lg border border-border-primary bg-background shadow-sm",
+              dropdownAnimationStyles,
               contentClassName
             )}
           >

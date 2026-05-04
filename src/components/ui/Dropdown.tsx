@@ -5,6 +5,7 @@ import { DropdownMenu } from "radix-ui";
 
 import { cn } from "@/lib/utils";
 import { handleRippleAnimation } from "@/lib/ui/handleRippleAnimation";
+import { dropdownAnimationStyles } from "@/styles/ui/inputStyles";
 
 import LabelContainer from "./LabelContainer";
 
@@ -63,6 +64,7 @@ const Dropdown = ({
             align="start"
             className={cn(
               "z-50 min-w-(--radix-dropdown-menu-trigger-width) overflow-hidden rounded-lg border border-border-primary bg-background p-1 shadow-sm",
+              dropdownAnimationStyles,
               contentClassName
             )}
           >
