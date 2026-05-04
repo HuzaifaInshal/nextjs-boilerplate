@@ -13,8 +13,8 @@ import { Search } from "lucide-react";
 import React, { forwardRef, useState } from "react";
 import PhoneInput2 from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import CountryFlag from "./country-flag";
-import LabelContainer from "./label-container";
+import CountryFlag from "./CountryFlag";
+import LabelContainer from "./LabelContainer";
 import { inputStyles, startIconStyles } from "@/styles/ui/inputStyles";
 
 countriesLib.registerLocale(enLocale);

@@ -12,7 +12,7 @@ import {
 } from "@/styles/ui/inputStyles";
 import { ReactDispatch } from "@/types/common";
 
-import LabelContainer from "./label-container";
+import LabelContainer from "./LabelContainer";
 import { handleRippleAnimation } from "@/lib/ui/handleRippleAnimation";
 
 type SelectOption = {

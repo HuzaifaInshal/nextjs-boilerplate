@@ -10,7 +10,7 @@ import {
 import { cn } from "@/lib/utils";
 import { ReactDispatch } from "@/types/common";
 
-import LabelContainer from "./label-container";
+import LabelContainer from "./LabelContainer";
 
 const otpInputCellClassName = cn(
   "relative flex h-12 w-12 items-center justify-center rounded-lg border border-border-primary bg-input text-base text-text-primary outline-none transition-all",

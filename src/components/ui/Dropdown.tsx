@@ -6,7 +6,7 @@ import { DropdownMenu } from "radix-ui";
 import { cn } from "@/lib/utils";
 import { handleRippleAnimation } from "@/lib/ui/handleRippleAnimation";
 
-import LabelContainer from "./label-container";
+import LabelContainer from "./LabelContainer";
 
 type DropdownItem = {
   value: string;

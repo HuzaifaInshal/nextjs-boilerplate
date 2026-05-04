@@ -1,7 +1,7 @@
 "use client";
-import DevDashboardProvder from "@/features/dev-dashboard/DevDashboardProvder";
+import DevDashboardProvder from "@/features/dev-dashboard/DevDashboardProvider";
 import NoInternetOverlay from "@/features/no-internet/NoInternetOverlay";
-import YupSchemaExtensions from "@/features/schema-extensions/schema-extensions";
+import YupSchemaExtensions from "@/features/schema-extensions/SchemaExtensions";
 import { ProgressProvider } from "@bprogress/next/app";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NuqsAdapter } from "nuqs/adapters/next/app";

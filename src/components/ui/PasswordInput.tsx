@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ReactDispatch } from "@/types/common";
 import React from "react";
-import LabelContainer from "./label-container";
+import LabelContainer from "./LabelContainer";
 import {
   endIconStyles,
   inputStyles,

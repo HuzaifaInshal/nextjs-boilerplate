@@ -1,65 +1,258 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import { Button } from "@/components/ui/Button";
+import CountryFlag from "@/components/ui/CountryFlag";
+import DateRangeSelector from "@/components/ui/DateRangeSelector";
+import DateSelector from "@/components/ui/DateSelector";
+import DateTimeRangeSelector from "@/components/ui/DateTimeRangeSelector";
+import DateTimeSelector from "@/components/ui/DateTimeSelector";
+import Dropdown from "@/components/ui/Dropdown";
+import LabelContainer from "@/components/ui/LabelContainer";
+import { Modal, ModalClose } from "@/components/ui/Modal";
+import OtpInput from "@/components/ui/OtpInput";
+import PasswordInput from "@/components/ui/PasswordInput";
+import PhoneInput from "@/components/ui/PhoneInput";
+import Select from "@/components/ui/Select";
+import { Sheet, SheetClose } from "@/components/ui/Sheet";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/Tables";
+import TextInput from "@/components/ui/TextInput";
+import TimeRangeSelector from "@/components/ui/TimeRangeSelector";
+import TimeSelector from "@/components/ui/TimeSelector";
+
+const Section = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => (
+  <div className="mb-10">
+    <h2 className="text-lg font-semibold text-text-primary mb-4 border-b border-border-primary pb-2">
+      {title}
+    </h2>
+    <div className="flex flex-wrap gap-4 items-start">{children}</div>
+  </div>
+);
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [otp, setOtp] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [textValue, setTextValue] = useState("");
+  const [selectValue, setSelectValue] = useState("");
+  const [date, setDate] = useState<Date | undefined>();
+  const [dateRange, setDateRange] = useState<{
+    startDate: Date | null;
+    endDate: Date | null;
+  }>({ startDate: null, endDate: null });
+  const [dateTime, setDateTime] = useState<Date | null>(null);
+  const [dateTimeRange, setDateTimeRange] = useState<{
+    startDateTime: Date | null;
+    endDateTime: Date | null;
+  }>({ startDateTime: null, endDateTime: null });
+  const [time, setTime] = useState<string | null>(null);
+  const [timeRange, setTimeRange] = useState<{
+    startTime: string | null;
+    endTime: string | null;
+  }>({ startTime: null, endTime: null });
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="p-8 max-w-5xl mx-auto">
+      <h1 className="text-2xl font-bold text-text-primary mb-8">
+        UI Components
+      </h1>
+
+      <Section title="Button">
+        <Button>Default</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="outline-transparent">Outline Transparent</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="link">Link</Button>
+        <Button size="sm">Small</Button>
+        <Button size="lg">Large</Button>
+        <Button isLoading>Loading</Button>
+        <Button disabled>Disabled</Button>
+      </Section>
+
+      <Section title="Country Flag">
+        <CountryFlag countryCode="US" />
+        <CountryFlag countryCode="PK" />
+        <CountryFlag countryCode="GB" />
+        <CountryFlag countryCode={null} />
+      </Section>
+
+      <Section title="Text Input">
+        <TextInput
+          label="Text Input"
+          placeholder="Enter text..."
+          value={textValue}
+          setValue={setTextValue}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <TextInput
+          label="With Error"
+          placeholder="Enter text..."
+          error="This field is required"
+        />
+        <TextInput label="Required" placeholder="Required field" required />
+      </Section>
+
+      <Section title="Password Input">
+        <PasswordInput
+          label="Password"
+          placeholder="Enter password..."
+          value={password}
+          setValue={setPassword}
+        />
+      </Section>
+
+      <Section title="Phone Input">
+        <PhoneInput
+          label="Phone Number"
+          value={phone}
+          onChange={setPhone}
+          defaultCountry="us"
+        />
+      </Section>
+
+      <Section title="OTP Input">
+        <OtpInput label="OTP" value={otp} setValue={setOtp} maxLength={6} />
+      </Section>
+
+      <Section title="Select">
+        <Select
+          label="Select Option"
+          value={selectValue}
+          setValue={setSelectValue}
+          options={[
+            { value: "1", label: "Option 1" },
+            { value: "2", label: "Option 2" },
+            { value: "3", label: "Option 3" },
+          ]}
+        />
+      </Section>
+
+      <Section title="Dropdown">
+        <Dropdown
+          label="Dropdown"
+          items={[
+            { value: "a", label: "Item A" },
+            { value: "b", label: "Item B" },
+            { value: "c", label: "Item C", disabled: true },
+          ]}
+        >
+          <Button variant="outline-transparent">Open Dropdown</Button>
+        </Dropdown>
+      </Section>
+
+      <Section title="Label Container">
+        <LabelContainer label="Label" required>
+          <div className="border border-border-primary rounded-lg px-3 py-2 text-sm text-text-secondary">
+            Wrapped content
+          </div>
+        </LabelContainer>
+        <LabelContainer label="With Error" error="Something went wrong">
+          <div className="border border-border-primary rounded-lg px-3 py-2 text-sm text-text-secondary">
+            Wrapped content
+          </div>
+        </LabelContainer>
+      </Section>
+
+      <Section title="Date Selector">
+        <DateSelector value={date} setValue={setDate} />
+      </Section>
+
+      <Section title="Date Range Selector">
+        <DateRangeSelector value={dateRange} setValue={setDateRange} />
+      </Section>
+
+      <Section title="Date Time Selector">
+        <DateTimeSelector value={dateTime} setValue={setDateTime} />
+      </Section>
+
+      <Section title="Date Time Range Selector">
+        <DateTimeRangeSelector
+          value={dateTimeRange}
+          setValue={setDateTimeRange}
+        />
+      </Section>
+
+      <Section title="Time Selector">
+        <TimeSelector value={time} setValue={setTime} />
+      </Section>
+
+      <Section title="Time Range Selector">
+        <TimeRangeSelector value={timeRange} setValue={setTimeRange} />
+      </Section>
+
+      <Section title="Table">
+        <div className="w-full">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Name</TableHead>
+                <TableHead>Role</TableHead>
+                <TableHead>Status</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell>Alice</TableCell>
+                <TableCell>Admin</TableCell>
+                <TableCell>Active</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Bob</TableCell>
+                <TableCell>User</TableCell>
+                <TableCell>Inactive</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </Section>
+
+      <Section title="Modal">
+        <Button onClick={() => setModalOpen(true)}>Open Modal</Button>
+        <Modal open={modalOpen} onOpenChange={setModalOpen}>
+          <div className="p-6 w-[400px]">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-semibold text-text-primary">
+                Modal Title
+              </h3>
+              <ModalClose />
+            </div>
+            <p className="text-sm text-text-secondary">
+              This is a modal dialog example.
+            </p>
+          </div>
+        </Modal>
+      </Section>
+
+      <Section title="Sheet">
+        <Button onClick={() => setSheetOpen(true)}>Open Sheet</Button>
+        <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
+          <div className="p-6 flex-1">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-semibold text-text-primary">
+                Sheet Title
+              </h3>
+              <SheetClose />
+            </div>
+            <p className="text-sm text-text-secondary">
+              This is a side sheet example.
+            </p>
+          </div>
+        </Sheet>
+      </Section>
+    </main>
   );
 }
