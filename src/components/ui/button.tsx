@@ -22,27 +22,23 @@ const buttonVariants = cva(
         default:
           "bg-[image:var(--gradient)] [&_.loader-container]:bg-[image:var(--gradient)] hover:opacity-90 text-white",
         ["outline-transparent"]:
-          "text-text-primary border border-border-primary hover:bg-black/5 [&_.loader-container]:bg-black/5 disabled:hover:bg-transparent shadow-[0px_1px_2px_0px_#00000014]",
+          "text-text-primary border border-border-primary hover:bg-black/5 disabled:hover:bg-transparent shadow-[0px_1px_2px_0px_#00000014]",
         outline:
-          "border border-primary hover:bg-primary/10 [&_.loader-container]:bg-black/5 disabled:hover:bg-transparent text-primary",
-        secondary:
-          "bg-secondary [&_.loader-container]:bg-secondary hover:opacity-90 text-white",
+          "border border-primary hover:bg-primary/10 disabled:hover:bg-transparent text-primary",
+        secondary: "",
         ghost:
-          "text-text-primary [&_.loader-container]:bg-black/5 hover:bg-black/5 disabled:hover:bg-transparent",
-        success: "bg-success text-white [&_.loader-container]:bg-success",
-        destructive:
-          "bg-destructive text-white [&_.loader-container]:bg-destructive",
+          "text-text-primary hover:bg-black/5 disabled:hover:bg-transparent",
+        destructive: "",
         link: "text-primary underline-offset-4 hover:underline"
       },
       size: {
-        default: "h-10 px-8 py-2",
-        xs: "h-8 px-3 text-sm",
-        sm: "h-9 gap-1.5 px-4 text-sm",
-        lg: "h-11 px-10",
+        default: "h-9 px-8 py-2",
+        xs: "h-7 px-3 text-sm",
+        sm: "h-8 gap-1.5 px-4 text-sm",
+        lg: "h-12 px-10",
         icon: "size-9 rounded-full",
         xlg: "h-12 px-12",
-        full: "h-10 w-full",
-        lgfull: "h-11 w-full",
+        full: "h-12 w-full",
         fit: "h-10 w-fit px-0"
       }
     },

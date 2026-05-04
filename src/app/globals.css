@@ -1,23 +1,22 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
 @theme inline {
-  --color-primary:var(--primary);
-  --color-secondary:var(--secondary);
-  --color-success:var(--success);
-  --color-desctructive:var(--desctructive);
-  --color-text-primary:var(--text-primary);
-  --color-text-secondary:var(--text-secondary);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-success: var(--success);
+  --color-desctructive: var(--desctructive);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
 }
 
 :root {
-  --primary:#5178ff;
-  --secondary:#5178ff;
-  --text-primary:#ffffff;
-  --text-secondary: lab(66.128% -.0000298023 .0000119209);;
-  --success:#00ce26;
-  --desctructive:#da2020;
+  --primary: #5178ff;
+  --secondary: #5178ff;
+  --text-primary: #ffffff;
+  --text-secondary: lab(66.128% -0.0000298023 0.0000119209);
+  --success: #00ce26;
+  --desctructive: #da2020;
 }
 
 /* ========================|| Button Ripple Animation ||======================== */
@@ -74,4 +73,13 @@
 
 .scrollbar-h-3::-webkit-scrollbar {
   height: 3px;
+}
+
+/* ========================|| Input Auto Fill Color Handler ||======================== */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--input) inset !important;
+  color: var(--text-primary) !important;
 }
