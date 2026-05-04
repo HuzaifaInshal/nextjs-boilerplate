@@ -146,7 +146,7 @@ const getDateCellClasses = ({
 
   if (isRangeStart || isRangeEnd) {
     return cn(
-      "text-sm font-medium rounded-full font-bold text-safed",
+      "text-sm font-medium rounded-full font-bold text-background",
       MainBackground,
       `hover:${MainBackground}`
     );

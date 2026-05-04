@@ -152,7 +152,7 @@ const getDateCellClasses = ({
 
   if (isRangeStart || isRangeEnd) {
     return cn(
-      "text-sm font-medium rounded-full font-bold text-safed",
+      "text-sm font-medium rounded-full font-bold text-background",
       MainBackground,
       `hover:${MainBackground}`
     );
@@ -558,7 +558,7 @@ const TimeGrid = ({
                 className={cn(
                   "justify-start font-medium",
                   isSelected &&
-                    `${MainBackground} text-safed hover:${MainBackground}`
+                    `${MainBackground} text-background hover:${MainBackground}`
                 )}
               >
                 {hour}
@@ -597,7 +597,7 @@ const TimeGrid = ({
                 className={cn(
                   "justify-start font-medium",
                   isSelected &&
-                    `${MainBackground} text-safed hover:${MainBackground}`
+                    `${MainBackground} text-background hover:${MainBackground}`
                 )}
               >
                 {minute}
@@ -637,7 +637,7 @@ const TimeGrid = ({
                   className={cn(
                     "justify-start font-medium",
                     isSelected &&
-                      `${MainBackground} text-safed hover:${MainBackground}`
+                      `${MainBackground} text-background hover:${MainBackground}`
                   )}
                 >
                   {period}
@@ -877,7 +877,7 @@ const cnField = (active: boolean) =>
     "rounded-md text-sm font-medium transition-colors",
     "px-3 py-2",
     active
-      ? "bg-primary text-safed"
+      ? "bg-primary text-background"
       : "bg-background-secondary text-text-primary hover:bg-background-secondary/80"
   ].join(" ");
 

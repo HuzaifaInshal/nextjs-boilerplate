@@ -245,7 +245,7 @@ const returnClassess = ({
   if (dateDisabled) {
     sec = `${TextColorDisabled} !cursor-not-allowed hover:${TextColorDisabled}`;
   } else if (selected) {
-    sec = `${MainBackground} hover:${MainBackground} text-safed hover:text-safed font-bold`;
+    sec = `${MainBackground} hover:${MainBackground} text-background hover:text-background font-bold`;
   } else if (today) {
     sec = `font-bold ${SecondaryBackground}`;
   } else if (isCurrentMonth) {

@@ -14,7 +14,7 @@ const TableHeader = ({
   className,
   ...props
 }: React.ComponentProps<"thead">) => (
-  <thead className={cn("bg-brand-Text-50", className)} {...props} />
+  <thead className={cn("bg-background-secondary", className)} {...props} />
 );
 
 const TableBody = ({ className, ...props }: React.ComponentProps<"tbody">) => (
@@ -24,7 +24,7 @@ const TableBody = ({ className, ...props }: React.ComponentProps<"tbody">) => (
 const TableRow = ({ className, ...props }: React.ComponentProps<"tr">) => (
   <tr
     className={cn(
-      "border-b border-brand-Text-100 bg-brand-base-white",
+      "border-b border-border-primary bg-background",
       className
     )}
     {...props}
@@ -34,7 +34,7 @@ const TableRow = ({ className, ...props }: React.ComponentProps<"tr">) => (
 const TableHead = ({ className, ...props }: React.ComponentProps<"th">) => (
   <th
     className={cn(
-      "h-11 px-4 text-left align-middle text-sm font-medium text-brand-Text-500",
+      "h-11 px-4 text-left align-middle text-sm font-medium text-text-secondary",
       className
     )}
     {...props}

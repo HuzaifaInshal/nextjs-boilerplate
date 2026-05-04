@@ -22,8 +22,8 @@ const Modal = ({ open, onOpenChange, children, className }: ModalProps) => (
       <Dialog.Content
         className={cn(
           "fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2",
-          "bg-brand-base-white rounded-[20px] shadow-[0px_1px_10px_0px_rgba(0,0,0,0.08)]",
-          "outline -outline-offset-1 outline-brand-Text-100",
+          "bg-background rounded-[20px] shadow-[0px_1px_10px_0px_rgba(0,0,0,0.08)]",
+          "outline -outline-offset-1 outline-border-primary",
           "focus:outline-none",
           "duration-100 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
 
@@ -39,7 +39,7 @@ const Modal = ({ open, onOpenChange, children, className }: ModalProps) => (
 const ModalClose = ({ className }: { className?: string }) => (
   <Dialog.Close
     className={cn(
-      "rounded-lg p-1 text-brand-Text-400 hover:text-brand-Text-700 hover:bg-brand-Text-50 transition-colors",
+      "rounded-lg p-1 text-text-secondary hover:text-text-primary hover:bg-background-secondary transition-colors",
       className
     )}
   >

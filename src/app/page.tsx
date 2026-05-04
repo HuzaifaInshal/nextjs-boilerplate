@@ -84,13 +84,6 @@ export default function Home() {
         <Button disabled>Disabled</Button>
       </Section>
 
-      <Section title="Country Flag">
-        <CountryFlag countryCode="US" />
-        <CountryFlag countryCode="PK" />
-        <CountryFlag countryCode="GB" />
-        <CountryFlag countryCode={null} />
-      </Section>
-
       <Section title="Text Input">
         <TextInput
           label="Text Input"

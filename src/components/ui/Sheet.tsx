@@ -30,7 +30,7 @@ const Sheet = ({
       />
       <Dialog.Content
         className={cn(
-          "fixed top-0 z-50 h-full bg-brand-base-white shadow-[0px_1px_10px_0px_rgba(0,0,0,0.08)] flex flex-col focus:outline-none",
+          "fixed top-0 z-50 h-full bg-background shadow-[0px_1px_10px_0px_rgba(0,0,0,0.08)] flex flex-col focus:outline-none",
           side === "right" ? "right-0" : "left-0",
           side === "right"
             ? "data-[state=open]:animate-in data-[state=open]:slide-in-from-right data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right"
@@ -49,7 +49,7 @@ const Sheet = ({
 const SheetClose = ({ className }: { className?: string }) => (
   <Dialog.Close
     className={cn(
-      "rounded-lg p-1 text-brand-Text-400 hover:text-brand-Text-700 hover:bg-brand-Text-50 transition-colors",
+      "rounded-lg p-1 text-text-secondary hover:text-text-primary hover:bg-background-secondary transition-colors",
       className
     )}
   >

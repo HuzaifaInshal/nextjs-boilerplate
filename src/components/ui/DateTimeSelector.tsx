@@ -133,7 +133,7 @@ const getDateCellClasses = ({
 
   if (isSelected) {
     return cn(
-      "text-sm font-medium rounded-full font-bold text-safed",
+      "text-sm font-medium rounded-full font-bold text-background",
       MainBackground,
       `hover:${MainBackground}`
     );
@@ -525,7 +525,7 @@ const TimeGrid = ({
                 className={cn(
                   "justify-start font-medium",
                   isSelected &&
-                    `${MainBackground} text-safed hover:${MainBackground}`
+                    `${MainBackground} text-background hover:${MainBackground}`
                 )}
               >
                 {hour}
@@ -564,7 +564,7 @@ const TimeGrid = ({
                 className={cn(
                   "justify-start font-medium",
                   isSelected &&
-                    `${MainBackground} text-safed hover:${MainBackground}`
+                    `${MainBackground} text-background hover:${MainBackground}`
                 )}
               >
                 {minute}
@@ -604,7 +604,7 @@ const TimeGrid = ({
                   className={cn(
                     "justify-start font-medium",
                     isSelected &&
-                      `${MainBackground} text-safed hover:${MainBackground}`
+                      `${MainBackground} text-background hover:${MainBackground}`
                   )}
                 >
                   {period}

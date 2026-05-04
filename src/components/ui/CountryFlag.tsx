@@ -9,7 +9,7 @@ const CountryFlag = ({ countryCode }: { countryCode?: string | null }) => {
 
   if (!isValidCode || error) {
     return (
-      <div className="border border-kala rounded-full h-7 w-7 flex center">
+      <div className="border border-border-primary rounded-full h-7 w-7 flex center">
         ?
       </div>
     );

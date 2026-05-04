@@ -199,7 +199,7 @@ const TimeGrid = ({
                 className={cn(
                   "justify-start font-medium",
                   isSelected &&
-                    `${MainBackground} text-safed hover:${MainBackground}`
+                    `${MainBackground} text-background hover:${MainBackground}`
                 )}
               >
                 {hour}
@@ -238,7 +238,7 @@ const TimeGrid = ({
                 className={cn(
                   "justify-start font-medium",
                   isSelected &&
-                    `${MainBackground} text-safed hover:${MainBackground}`
+                    `${MainBackground} text-background hover:${MainBackground}`
                 )}
               >
                 {minute}
@@ -278,7 +278,7 @@ const TimeGrid = ({
                   className={cn(
                     "justify-start font-medium",
                     isSelected &&
-                      `${MainBackground} text-safed hover:${MainBackground}`
+                      `${MainBackground} text-background hover:${MainBackground}`
                   )}
                 >
                   {period}

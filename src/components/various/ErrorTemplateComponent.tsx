@@ -109,22 +109,22 @@ const ErrorTemplateComponent = ({
           />
         </svg>
 
-        <div className="rounded-2xl p-8 text-center shadow-2xl dark:shadow-kala/50">
+        <div className="rounded-2xl p-8 text-center shadow-2xl">
           <div className="flex flex-col gap-3">
-            <h1 className="text-kala font-bold text-5xl md:text-6xl tracking-tight">
+            <h1 className="text-text-primary font-bold text-5xl md:text-6xl tracking-tight">
               {textA}
             </h1>
             <div className="h-1 w-20 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full"></div>
-            <h2 className="text-kala/90 font-bold text-xl md:text-2xl mt-2">
+            <h2 className="text-text-primary/90 font-bold text-xl md:text-2xl mt-2">
               {textB}
             </h2>
-            <p className="text-kala/70 text-sm md:text-base max-w-md mx-auto mt-2">
+            <p className="text-text-primary/70 text-sm md:text-base max-w-md mx-auto mt-2">
               {textC}
             </p>
           </div>
         </div>
         <div className="border border-pink-400 px-6 py-3 rounded-full">
-          <p className="text-kala/80 text-sm font-mono text-center">
+          <p className="text-text-primary/80 text-sm font-mono text-center">
             ERROR CODE:{" "}
             <span className="text-pink-400 font-bold">{errorCode}</span>
           </p>
@@ -195,7 +195,7 @@ const ErrorTemplateComponent = ({
           ) : null}
         </div>
 
-        <p className="text-kala/60 text-sm">
+        <p className="text-text-primary/60 text-sm">
           Need help?{" "}
           <a
             href="mailto:support@letzfair.com"
